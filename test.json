@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "configurationStores_accsesticketingconfig_name": {
+            "defaultValue": "accsesticketingconfig",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.AppConfiguration/configurationStores",
+            "apiVersion": "2021-03-01-preview",
+            "name": "[parameters('configurationStores_accsesticketingconfig_name')]",
+            "location": "ukwest",
+            "sku": {
+                "name": "standard"
+            },
+            "properties": {
+                "encryption": {},
+                "disableLocalAuth": false
+            }
+        }
+    ]
+}
